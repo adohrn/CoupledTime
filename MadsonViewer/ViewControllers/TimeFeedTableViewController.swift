@@ -32,12 +32,19 @@ class TimeFeedTableViewController: UITableViewController {
         
         let _ = ref.child("Feed").queryOrdered(byChild: "monthDay").queryEqual(toValue: monthDay).observe(DataEventType.value, with: { (snapshot) in
             self.posts = []
-            
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let value = snap.value as? NSDictionary
                 
-                self.posts.append(PostModel.init(imageData: value?["image"] as? String, mainText: value?["text"] as? String, unixDate: value!["unixDate"] as! Double))
+                // Main text and date are required
+                if let mainText = value?["text"] as? String, let unixDate = value!["unixDate"] as? Double {
+                    var imageData: Data?
+                    if let imageDataString = value?["image"] as? String {
+                        imageData = Data(base64Encoded: imageDataString, options: .ignoreUnknownCharacters)
+                    }
+                    
+                    self.posts.append(PostModel.init(imageData: imageData, mainText: mainText, unixDate: unixDate))
+                }
             }
             
             self.tableView.reloadData()
@@ -67,17 +74,13 @@ class TimeFeedTableViewController: UITableViewController {
         cell.mainText.sizeToFit()
         
         if posts[indexPath.row].imageData != nil {
-            if let decodedData = Data(base64Encoded: posts[indexPath.row].imageData!, options: .ignoreUnknownCharacters) {
-                
-                let image = UIImage(data: decodedData)
-                if (cell.mainImage.bounds.size.width > image!.size.width && cell.mainImage.bounds.size.height > image!.size.height) {
-                    cell.mainImage.contentMode = .scaleAspectFit
-                }
-                
-                cell.mainImage.image = image
+            let image = UIImage(data: posts[indexPath.row].imageData!)
+            if (cell.mainImage.bounds.size.width > image!.size.width && cell.mainImage.bounds.size.height > image!.size.height) {
+                cell.mainImage.contentMode = .scaleAspectFit
             } else {
-                cell.imageViewHeight.constant = 0
+                cell.mainImage.contentMode = .scaleAspectFill
             }
+            cell.mainImage.image = image
         } else {
             cell.imageViewHeight.constant = 0
         }

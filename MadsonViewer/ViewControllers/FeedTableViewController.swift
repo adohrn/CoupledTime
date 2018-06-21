@@ -13,6 +13,8 @@ class FeedTableViewController: UITableViewController {
     
     var ref: DatabaseReference!
     var posts: [PostModel] = []
+    
+    // Color scheme for post color
     var colorCycle: [UIColor] = [UIColor.init(red: 244/255, green: 26/255, blue: 79/255, alpha: 1),
                                  UIColor.init(red: 255/255, green: 101/255, blue: 35/255, alpha: 1),
                                  UIColor.init(red: 249/255, green: 194/255, blue: 46/255, alpha: 1),
@@ -22,18 +24,28 @@ class FeedTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Dynamic height for rows
         self.tableView.rowHeight = UITableViewAutomaticDimension;
         self.tableView.estimatedRowHeight = 100.0;
         
         ref = Database.database().reference()
         
+        // Pull data from firebase
         let _ = ref.child("Feed").queryOrdered(byChild: "unixDate").observe(DataEventType.value, with: { (snapshot) in
             self.posts = []
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let value = snap.value as? NSDictionary
                 
-                self.posts.insert(PostModel.init(imageData: value?["image"] as? String, mainText: value?["text"] as? String, unixDate: value!["unixDate"] as! Double), at: 0)
+                // Main text and date are required
+                if let mainText = value?["text"] as? String, let unixDate = value!["unixDate"] as? Double {
+                    var imageData: Data?
+                    if let imageDataString = value?["image"] as? String {
+                        imageData = Data(base64Encoded: imageDataString, options: .ignoreUnknownCharacters)
+                    }
+                    
+                    self.posts.insert(PostModel.init(imageData: imageData, mainText: mainText, unixDate: unixDate), at: 0)
+                }
             }
             
             self.tableView.reloadData()
@@ -63,18 +75,13 @@ class FeedTableViewController: UITableViewController {
         cell.mainText.sizeToFit()
         
         if posts[indexPath.row].imageData != nil {
-            if let decodedData = Data(base64Encoded: posts[indexPath.row].imageData!, options: .ignoreUnknownCharacters) {
-                
-                let image = UIImage(data: decodedData)
-                if (cell.mainImage.bounds.size.width > image!.size.width && cell.mainImage.bounds.size.height > image!.size.height) {
-                    cell.mainImage.contentMode = .scaleAspectFit
-                } else {
-                    cell.mainImage.contentMode = .scaleAspectFill
-                }
-                cell.mainImage.image = image
+            let image = UIImage(data: posts[indexPath.row].imageData!)
+            if (cell.mainImage.bounds.size.width > image!.size.width && cell.mainImage.bounds.size.height > image!.size.height) {
+                cell.mainImage.contentMode = .scaleAspectFit
             } else {
-                cell.imageViewHeight.constant = 0
+                cell.mainImage.contentMode = .scaleAspectFill
             }
+            cell.mainImage.image = image
         } else {
             cell.imageViewHeight.constant = 0
         }
