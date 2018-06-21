@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DA486C276BD38DBE84DBB71 /* Pods_MadsonViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDAC36B10ABC85CEA12A4629 /* Pods_MadsonViewer.framework */; };
 		D05747B520D33AED00D2EC72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05747B420D33AED00D2EC72 /* AppDelegate.swift */; };
-		D05747B720D33AED00D2EC72 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05747B620D33AED00D2EC72 /* FirstViewController.swift */; };
-		D05747B920D33AED00D2EC72 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05747B820D33AED00D2EC72 /* SecondViewController.swift */; };
 		D05747BC20D33AED00D2EC72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05747BA20D33AED00D2EC72 /* Main.storyboard */; };
 		D05747BE20D33AEF00D2EC72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D05747BD20D33AEF00D2EC72 /* Assets.xcassets */; };
 		D05747C120D33AEF00D2EC72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D05747BF20D33AEF00D2EC72 /* LaunchScreen.storyboard */; };
+		D0EDC28D20DBFA3500204CA8 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDC28C20DBFA3500204CA8 /* FeedTableViewController.swift */; };
+		D0EDC28F20DBFAA000204CA8 /* TimeFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDC28E20DBFAA000204CA8 /* TimeFeedTableViewController.swift */; };
+		D0EDC29220DBFBEF00204CA8 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDC29120DBFBEF00204CA8 /* PostModel.swift */; };
+		D0EDC29520DBFC5400204CA8 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EDC29420DBFC5400204CA8 /* PostTableViewCell.swift */; };
+		D0EDC29720DBFFD100204CA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0EDC29620DBFFD100204CA8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		621CAF4C7D755D76AF326005 /* Pods-MadsonViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadsonViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MadsonViewer/Pods-MadsonViewer.debug.xcconfig"; sourceTree = "<group>"; };
+		CDAC36B10ABC85CEA12A4629 /* Pods_MadsonViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadsonViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF76754C0EA8F5317F8AEFBD /* Pods-MadsonViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadsonViewer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadsonViewer/Pods-MadsonViewer.release.xcconfig"; sourceTree = "<group>"; };
 		D05747B120D33AED00D2EC72 /* MadsonViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MadsonViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D05747B420D33AED00D2EC72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D05747B620D33AED00D2EC72 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D05747B820D33AED00D2EC72 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		D05747BB20D33AED00D2EC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D05747BD20D33AEF00D2EC72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D05747C020D33AEF00D2EC72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D05747C220D33AEF00D2EC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0EDC28C20DBFA3500204CA8 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewController.swift; path = MadsonViewer/ViewControllers/FeedTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D0EDC28E20DBFAA000204CA8 /* TimeFeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TimeFeedTableViewController.swift; path = MadsonViewer/ViewControllers/TimeFeedTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D0EDC29120DBFBEF00204CA8 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		D0EDC29420DBFC5400204CA8 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		D0EDC29620DBFFD100204CA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DA486C276BD38DBE84DBB71 /* Pods_MadsonViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		673E4F23673BD8F2E65B0841 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				621CAF4C7D755D76AF326005 /* Pods-MadsonViewer.debug.xcconfig */,
+				CF76754C0EA8F5317F8AEFBD /* Pods-MadsonViewer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D05747A820D33AED00D2EC72 = {
 			isa = PBXGroup;
 			children = (
 				D05747B320D33AED00D2EC72 /* MadsonViewer */,
 				D05747B220D33AED00D2EC72 /* Products */,
+				673E4F23673BD8F2E65B0841 /* Pods */,
+				FFE36F5CCD3F8E162539B859 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +78,51 @@
 		D05747B320D33AED00D2EC72 /* MadsonViewer */ = {
 			isa = PBXGroup;
 			children = (
+				D0EDC29620DBFFD100204CA8 /* GoogleService-Info.plist */,
+				D0EDC29320DBFC3500204CA8 /* Views */,
+				D0EDC29020DBFBD600204CA8 /* Models */,
+				D0EDC28B20DBF9FF00204CA8 /* ViewControllers */,
 				D05747B420D33AED00D2EC72 /* AppDelegate.swift */,
-				D05747B620D33AED00D2EC72 /* FirstViewController.swift */,
-				D05747B820D33AED00D2EC72 /* SecondViewController.swift */,
 				D05747BA20D33AED00D2EC72 /* Main.storyboard */,
 				D05747BD20D33AEF00D2EC72 /* Assets.xcassets */,
 				D05747BF20D33AEF00D2EC72 /* LaunchScreen.storyboard */,
 				D05747C220D33AEF00D2EC72 /* Info.plist */,
 			);
 			path = MadsonViewer;
+			sourceTree = "<group>";
+		};
+		D0EDC28B20DBF9FF00204CA8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDC28C20DBFA3500204CA8 /* FeedTableViewController.swift */,
+				D0EDC28E20DBFAA000204CA8 /* TimeFeedTableViewController.swift */,
+			);
+			name = ViewControllers;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D0EDC29020DBFBD600204CA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDC29120DBFBEF00204CA8 /* PostModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0EDC29320DBFC3500204CA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0EDC29420DBFC5400204CA8 /* PostTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FFE36F5CCD3F8E162539B859 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDAC36B10ABC85CEA12A4629 /* Pods_MadsonViewer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D05747C520D33AEF00D2EC72 /* Build configuration list for PBXNativeTarget "MadsonViewer" */;
 			buildPhases = (
+				B1DD7B33DE35D0CBB84EDAE9 /* [CP] Check Pods Manifest.lock */,
 				D05747AD20D33AED00D2EC72 /* Sources */,
 				D05747AE20D33AED00D2EC72 /* Frameworks */,
 				D05747AF20D33AED00D2EC72 /* Resources */,
+				2ED61CF3FEB771BAD2C39A76 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D05747C120D33AEF00D2EC72 /* LaunchScreen.storyboard in Resources */,
+				D0EDC29720DBFFD100204CA8 /* GoogleService-Info.plist in Resources */,
 				D05747BE20D33AEF00D2EC72 /* Assets.xcassets in Resources */,
 				D05747BC20D33AED00D2EC72 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +194,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2ED61CF3FEB771BAD2C39A76 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MadsonViewer/Pods-MadsonViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MadsonViewer/Pods-MadsonViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1DD7B33DE35D0CBB84EDAE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MadsonViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D05747AD20D33AED00D2EC72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D05747B920D33AED00D2EC72 /* SecondViewController.swift in Sources */,
 				D05747B520D33AED00D2EC72 /* AppDelegate.swift in Sources */,
-				D05747B720D33AED00D2EC72 /* FirstViewController.swift in Sources */,
+				D0EDC29220DBFBEF00204CA8 /* PostModel.swift in Sources */,
+				D0EDC29520DBFC5400204CA8 /* PostTableViewCell.swift in Sources */,
+				D0EDC28D20DBFA3500204CA8 /* FeedTableViewController.swift in Sources */,
+				D0EDC28F20DBFAA000204CA8 /* TimeFeedTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +388,7 @@
 		};
 		D05747C620D33AEF00D2EC72 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 621CAF4C7D755D76AF326005 /* Pods-MadsonViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -299,6 +406,7 @@
 		};
 		D05747C720D33AEF00D2EC72 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF76754C0EA8F5317F8AEFBD /* Pods-MadsonViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
