@@ -77,8 +77,9 @@ class TimeFeedTableViewController: UITableViewController {
         }
         
         if let imageUrl = posts[indexPath.row].imageUrl {
+            let placeholderImage = UIImage(named: "placeholder")
             let url = URL(string: imageUrl)
-            cell.mainImage.kf.setImage(with: url)
+            cell.mainImage.kf.setImage(with: url, placeholder: placeholderImage)
         } else {
             cell.imageViewHeight.constant = 0
         }
