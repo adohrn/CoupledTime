@@ -37,13 +37,11 @@ class TimeFeedTableViewController: UITableViewController {
                 let value = snap.value as? NSDictionary
                 
                 // Main text and date are required
-                if let mainText = value?["text"] as? String, let unixDate = value!["unixDate"] as? Double {
-                    var imageData: Data?
-                    if let imageDataString = value?["image"] as? String {
-                        imageData = Data(base64Encoded: imageDataString, options: .ignoreUnknownCharacters)
-                    }
+                if let unixDate = value!["unixDate"] as? Double {
+                    let mainText = value?["text"] as? String
+                    let imageUrl = value?["imageUrl"] as? String
                     
-                    self.posts.append(PostModel.init(imageData: imageData, mainText: mainText, unixDate: unixDate))
+                    self.posts.insert(PostModel.init(imageUrl: imageUrl, mainText: mainText, unixDate: unixDate), at: 0)
                 }
             }
             
@@ -70,17 +68,17 @@ class TimeFeedTableViewController: UITableViewController {
         let cell:PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         
         cell.dateLabel?.text = posts[indexPath.row].dateString
-        cell.mainText?.text = posts[indexPath.row].mainText
-        cell.mainText.sizeToFit()
         
-        if posts[indexPath.row].imageData != nil {
-            let image = UIImage(data: posts[indexPath.row].imageData!)
-            if (cell.mainImage.bounds.size.width > image!.size.width && cell.mainImage.bounds.size.height > image!.size.height) {
-                cell.mainImage.contentMode = .scaleAspectFit
-            } else {
-                cell.mainImage.contentMode = .scaleAspectFill
-            }
-            cell.mainImage.image = image
+        if posts[indexPath.row].mainText != nil {
+            cell.mainText?.text = posts[indexPath.row].mainText
+            cell.mainText.sizeToFit()
+        } else {
+            cell.mainText.isHidden = true
+        }
+        
+        if let imageUrl = posts[indexPath.row].imageUrl {
+            let url = URL(string: imageUrl)
+            cell.mainImage.kf.setImage(with: url)
         } else {
             cell.imageViewHeight.constant = 0
         }

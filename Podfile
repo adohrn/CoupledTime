@@ -8,5 +8,6 @@ target 'MadsonViewer' do
   # Pods for MadsonViewer
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'Kingfisher', '~> 4.0'
 
 end

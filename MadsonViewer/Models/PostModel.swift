@@ -10,12 +10,13 @@ import UIKit
 
 class PostModel {
     var imageData: Data?
+    var imageUrl: String?
     var mainText: String?
     var unixDate: Double
     var dateString: String = ""
     
-    init(imageData: Data?, mainText: String?, unixDate: Double) {
-        self.imageData = imageData
+    init(imageUrl: String?, mainText: String?, unixDate: Double) {
+        self.imageUrl = imageUrl
         self.mainText = mainText
         self.unixDate = unixDate
         self.dateString = convertDate(unixTime: unixDate)
